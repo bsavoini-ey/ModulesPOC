@@ -4,8 +4,7 @@ import com.bsavoini.usecases.media.GetMoviesUseCase
 
 class MoviesInteractor(private val moviesUseCase: GetMoviesUseCase) {
 
-    fun listMovies(){
-        moviesUseCase.execute()
-    }
+    suspend fun listMovies() =
+        moviesUseCase.execute(Unit)
 
 }

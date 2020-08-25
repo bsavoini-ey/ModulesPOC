@@ -1,10 +1,12 @@
 package com.bsavoini.usecases.favorite
 
 import com.bsavoini.repository.FavoritesRepository
+import com.bsavoini.usecases.BaseUseCase
 
-class AddFavoriteUseCase(private val repository: FavoritesRepository) {
+class AddFavoriteUseCase(private val repository: FavoritesRepository) :
+    BaseUseCase<Boolean, Int>() {
 
-    fun execute() {
-        repository.addFavorite()
-    }
+    override suspend fun getResult(id: Int): Boolean =
+        repository.addFavorite(id)
+
 }

@@ -2,10 +2,10 @@ package com.bsavoini.repository
 
 interface FavoritesRepository {
 
-    fun addFavorite()
+    fun addFavorite(id: Int): Boolean
 
-    fun removeFavorite()
+    fun removeFavorite(id: Int): Boolean
 
-    fun getFavorite()
+    fun getFavorite(id: Int): Boolean
 
 }

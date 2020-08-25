@@ -2,7 +2,7 @@ package com.bsavoini.repository
 
 interface MediaRepository {
 
-    fun getMovies(): List<String>
+    fun getMovies(): List<MovieEntity>
 
-    fun getTvShows(): List<String>
+    fun getTvShows(): List<TvShowEntity>
 }

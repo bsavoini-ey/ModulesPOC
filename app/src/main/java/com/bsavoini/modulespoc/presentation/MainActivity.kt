@@ -1,10 +1,8 @@
 package com.bsavoini.modulespoc.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bsavoini.interactor.MoviesInteractor
+import androidx.appcompat.app.AppCompatActivity
 import com.bsavoini.modulespoc.R
-import com.bsavoini.repository.FavoritesRepository
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.listMovies()
         viewModel.listTvShows()
         viewModel.toggleFavorite(0)
+
 
     }
 }

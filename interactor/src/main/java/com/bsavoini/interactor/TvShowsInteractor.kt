@@ -4,7 +4,7 @@ import com.bsavoini.usecases.media.GetTvShowsUseCase
 
 class TvShowsInteractor(private val getTvShowsUseCase: GetTvShowsUseCase) {
 
-    suspend fun listTvShow() =
+     fun listTvShow() =
         getTvShowsUseCase.execute(Unit)
 
 }

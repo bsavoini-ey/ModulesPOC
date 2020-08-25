@@ -6,7 +6,7 @@ import com.bsavoini.usecases.BaseUseCase
 class GetMoviesUseCase(private val repository: MediaRepository) :
     BaseUseCase<List<String>, Unit>() {
 
-    override suspend fun getResult(params: Unit): List<String> =
+    override  fun getResult(params: Unit): List<String> =
         repository.getMovies()
 
 }

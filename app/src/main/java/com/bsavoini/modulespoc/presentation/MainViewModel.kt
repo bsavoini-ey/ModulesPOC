@@ -5,13 +5,24 @@ import com.bsavoini.interactor.MoviesInteractor
 import com.bsavoini.interactor.TvShowsInteractor
 
 class MainViewModel(
-    val moviesInteractor: MoviesInteractor,
-    val tvShowsInteractor: TvShowsInteractor,
-    val favoritesInteractor: FavoritesInteractor
+    private val moviesInteractor: MoviesInteractor,
+    private val tvShowsInteractor: TvShowsInteractor,
+    private val favoritesInteractor: FavoritesInteractor
 ) {
 
-    fun oi(){
-        moviesInteractor.oi()
+    fun listMovies() {
+        moviesInteractor.listMovies()
     }
+
+    fun listTvShows() {
+        tvShowsInteractor.listTvShow()
+    }
+
+    fun toggleFavorite(id: Int) {
+        favoritesInteractor.toggleFavorite(id)
+    }
+
+    fun isFavorite(id: Int) = favoritesInteractor.isFavorite(id)
+
 
 }

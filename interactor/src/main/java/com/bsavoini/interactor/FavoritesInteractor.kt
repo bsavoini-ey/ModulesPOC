@@ -10,7 +10,7 @@ class FavoritesInteractor(
     private val getFavoriteUseCase: GetFavoriteUseCase
 ) {
 
-    suspend fun toggleFavorite(id: Int): Boolean {
+     fun toggleFavorite(id: Int): Boolean {
         val isFavorite = getFavoriteUseCase.execute(id)
         return if (isFavorite) {
             removeFavoriteUseCase.execute(id)
@@ -19,7 +19,7 @@ class FavoritesInteractor(
         }
     }
 
-    suspend fun isFavorite(id: Int): Boolean =
+     fun isFavorite(id: Int): Boolean =
         getFavoriteUseCase.execute(id)
 
 }

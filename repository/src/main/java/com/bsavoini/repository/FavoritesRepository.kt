@@ -1,17 +1,11 @@
 package com.bsavoini.repository
 
-class FavoritesRepository {
+interface FavoritesRepository {
 
-    fun addFavorite() {
+    fun addFavorite()
 
-    }
+    fun removeFavorite()
 
-    fun removeFavorite() {
-
-    }
-
-    fun getFavorites() {
-
-    }
+    fun getFavorite()
 
 }

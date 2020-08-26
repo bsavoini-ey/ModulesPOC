@@ -1,5 +1,6 @@
 package com.bsavoini.tvshows.presentation
 
+import com.bsavoini.base_features.BaseViewModel
 import com.bsavoini.interactor.FavoriteTvShowsInteractor
 import com.bsavoini.interactor.FavoritesInteractor
 import com.bsavoini.interactor.TvShowsInteractor
@@ -8,14 +9,17 @@ import com.bsavoini.interactor.model.TvShowModel
 class TvShowViewModel(
     private val tvShowsInteractor: TvShowsInteractor,
     private val favoriteTvShowsInteractor: FavoriteTvShowsInteractor
-) {
+) : BaseViewModel() {
 
     fun listTvShows() {
-      //  val list: List<TvShowModel> = tvShowsInteractor.listTvShow()
+        launchBackgroundJob({
+            val list: List<TvShowModel> = tvShowsInteractor.listTvShow()
+        })
     }
 
     fun toggleFavorite(id: Int) {
-    //    favoriteTvShowsInteractor.toggleFavorite(id)
+        launchBackgroundJob({
+            favoriteTvShowsInteractor.toggleFavorite(id)
+        })
     }
-
 }

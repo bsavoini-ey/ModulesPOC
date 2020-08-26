@@ -12,12 +12,12 @@ class TvShowsInteractor(
     private val isFavoriteUseCase: IsFavoriteUseCase
 ) {
 
-    fun listTvShow(): List<TvShowModel> =
+    suspend fun listTvShow(): List<TvShowModel> =
         getTvShowsUseCase.execute(Unit).map {
             it.toTvShowModel(isFavorite(it))
         }
 
-    private fun isFavorite(tvShowDO: TvShowDO) =
+    private suspend fun isFavorite(tvShowDO: TvShowDO) =
         isFavoriteUseCase.execute(
             IsFavoriteUseCase.Params(
                 id = tvShowDO.id,

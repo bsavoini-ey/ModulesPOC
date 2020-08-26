@@ -5,7 +5,7 @@ import com.bsavoini.repository.models.TvShowEntity
 
 interface MediaRepository {
 
-    fun getMovies(): List<MovieEntity>
+    suspend fun getMovies(): List<MovieEntity>
 
-    fun getTvShows(): List<TvShowEntity>
+    suspend fun getTvShows(): List<TvShowEntity>
 }

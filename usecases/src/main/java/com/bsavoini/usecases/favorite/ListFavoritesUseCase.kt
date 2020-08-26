@@ -8,7 +8,7 @@ import com.bsavoini.usecases.domainobjects.FavoriteDO
 class ListFavoritesUseCase(private val repository: FavoritesRepository) :
     BaseUseCase<List<FavoriteDO>, Unit>() {
 
-    override fun getResult(params: Unit) =
+    override suspend fun getResult(params: Unit) =
         repository.listFavorites().map {
             it.toFavoriteDO()
         }

@@ -13,12 +13,12 @@ class MoviesInteractor(
     private val isFavoriteUseCase: IsFavoriteUseCase
 ) {
 
-    fun listMovies(): List<MovieModel> =
+    suspend fun listMovies(): List<MovieModel> =
         moviesUseCase.execute(Unit).map {
             it.toMovieModel(isFavorite(it))
         }
 
-    private fun isFavorite(movieDO: MovieDO) =
+    private suspend fun isFavorite(movieDO: MovieDO) =
         isFavoriteUseCase.execute(
             IsFavoriteUseCase.Params(
                 id = movieDO.id,

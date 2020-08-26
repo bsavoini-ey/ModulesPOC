@@ -7,6 +7,6 @@ import com.bsavoini.repository.MediaRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single { MediaRepositoryImpl() as MediaRepository}
+    single { MediaRepositoryImpl(get()) as MediaRepository}
     single { FavoritesRepositoryImpl() as FavoritesRepository}
 }

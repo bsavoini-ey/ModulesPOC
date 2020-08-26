@@ -9,10 +9,10 @@ class MoviesViewModel(
     private val favoritesMoviesInteractor: FavoriteMoviesInteractor
 ) {
     fun listMovies() {
-        val list: List<MovieModel> = moviesInteractor.listMovies()
+      //  val list: List<MovieModel> = moviesInteractor.listMovies()
     }
 
     fun toggleFavorite(id: Int) {
-        favoritesMoviesInteractor.toggleFavorite(id)
+      //  favoritesMoviesInteractor.toggleFavorite(id)
     }
 }

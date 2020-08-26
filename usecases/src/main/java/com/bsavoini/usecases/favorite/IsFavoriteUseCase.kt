@@ -8,7 +8,7 @@ import com.bsavoini.usecases.domainobjects.MediaTypeDO
 class IsFavoriteUseCase(private val repository: FavoritesRepository) :
     BaseUseCase<Boolean, IsFavoriteUseCase.Params>() {
 
-    override fun getResult(params: Params): Boolean =
+    override suspend fun getResult(params: Params): Boolean =
         repository.isFavorite(params.id, MediaTypeEntity.valueOf(params.mediaType.name))
 
     data class Params(

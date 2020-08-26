@@ -8,6 +8,6 @@ class MainViewModel(
     private val favoritesInteractor: FavoritesInteractor
 ) {
 
-    fun listFavorites() = favoritesInteractor.listFavorites()
+    fun listFavorites() {}//favoritesInteractor.listFavorites()
 
 }

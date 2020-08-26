@@ -12,7 +12,7 @@ class FavoriteTvShowsInteractor(
     private val isFavoriteUseCase: IsFavoriteUseCase
 ) {
 
-    fun toggleFavorite(id: Int): Boolean {
+    suspend fun toggleFavorite(id: Int): Boolean {
         val favoriteDO = FavoriteDO(id, MediaTypeDO.TV_SHOW)
 
         return if (isFavorite(id)) {
@@ -22,6 +22,6 @@ class FavoriteTvShowsInteractor(
         }
     }
 
-    private fun isFavorite(id: Int): Boolean =
+    private suspend fun isFavorite(id: Int): Boolean =
         isFavoriteUseCase.execute(IsFavoriteUseCase.Params(id, MediaTypeDO.TV_SHOW))
 }

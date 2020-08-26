@@ -6,7 +6,7 @@ import com.bsavoini.usecases.favorite.ListFavoritesUseCase
 
 class FavoritesInteractor(private val listFavoritesUseCase: ListFavoritesUseCase) {
 
-    fun listFavorites(): List<FavoriteModel> =
+    suspend fun listFavorites(): List<FavoriteModel> =
         listFavoritesUseCase.execute(Unit).map {
             it.toFavoriteModel()
         }

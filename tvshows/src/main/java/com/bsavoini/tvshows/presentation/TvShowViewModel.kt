@@ -11,11 +11,11 @@ class TvShowViewModel(
 ) {
 
     fun listTvShows() {
-        val list: List<TvShowModel> = tvShowsInteractor.listTvShow()
+      //  val list: List<TvShowModel> = tvShowsInteractor.listTvShow()
     }
 
     fun toggleFavorite(id: Int) {
-        favoriteTvShowsInteractor.toggleFavorite(id)
+    //    favoriteTvShowsInteractor.toggleFavorite(id)
     }
 
 }

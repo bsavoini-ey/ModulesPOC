@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bsavoini.tvshows">
+
+    <application>
+        <activity android:name=".TvShowActivity">
+
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "scheme://host” -->
+                <data android:scheme="app" android:host="tv-show" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

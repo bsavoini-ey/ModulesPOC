@@ -25,6 +25,7 @@ android {
 }
 
 dependencies {
+    implementation project(":tvshows")
     implementation project(":interactor")
     implementation project(":usecases")
     implementation project(":repository")

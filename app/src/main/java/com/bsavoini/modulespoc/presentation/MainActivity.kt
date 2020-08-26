@@ -5,7 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bsavoini.modulespoc.R
-import com.bsavoini.tvshows.TvShowActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
@@ -15,15 +15,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel.isFavorite(0)
-        viewModel.listMovies()
+        viewModel.listFavorites()
         viewModel.toggleFavorite(0)
 
-        val intent = Intent().apply {
-            data = Uri.parse("app://tv-show")
+        btn_tv_shows.setOnClickListener {
+            openTvShows()
         }
 
-        startActivity(intent)
+        btn_movies.setOnClickListener {
+            openMovies()
+        }
+    }
 
+    private fun openTvShows() {
+        val intent = Intent().apply {
+            data = Uri.parse("app://tv-shows")
+        }
+        startActivity(intent)
+    }
+
+    private fun openMovies() {
+        val intent = Intent().apply {
+            data = Uri.parse("app://movies")
+        }
+        startActivity(intent)
     }
 }

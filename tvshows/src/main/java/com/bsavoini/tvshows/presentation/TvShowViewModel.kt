@@ -1,4 +1,4 @@
-package com.bsavoini.tvshows
+package com.bsavoini.tvshows.presentation
 
 import com.bsavoini.interactor.FavoritesInteractor
 import com.bsavoini.interactor.TvShowsInteractor

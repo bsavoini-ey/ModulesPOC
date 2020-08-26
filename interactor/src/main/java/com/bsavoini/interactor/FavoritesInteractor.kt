@@ -19,6 +19,10 @@ class FavoritesInteractor(
         }
     }
 
+    fun listFavorites(){
+        //todo
+    }
+
      fun isFavorite(id: Int): Boolean =
         getFavoriteUseCase.execute(id)
 

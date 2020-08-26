@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#612"
-    tools:context=".presentation.TvShowActivity">
+    tools:context=".presentation.MoviesActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

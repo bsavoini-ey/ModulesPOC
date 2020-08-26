@@ -1,20 +1,20 @@
 package com.bsavoini.movies.presentation
 
-import com.bsavoini.interactor.FavoritesInteractor
+import com.bsavoini.interactor.FavoriteMoviesInteractor
 import com.bsavoini.interactor.MoviesInteractor
 import com.bsavoini.interactor.model.MovieModel
 
 class MoviesViewModel(
     private val moviesInteractor: MoviesInteractor,
-    private val favoritesInteractor: FavoritesInteractor
+    private val favoritesMoviesInteractor: FavoriteMoviesInteractor
 ) {
     fun listMovies() {
         val list: List<MovieModel> = moviesInteractor.listMovies()
     }
 
     fun toggleFavorite(id: Int) {
-        favoritesInteractor.toggleFavorite(id)
+        favoritesMoviesInteractor.toggleFavorite(id)
     }
 
-    fun isFavorite(id: Int) = favoritesInteractor.isFavorite(id)
+    fun isFavorite(id: Int) = favoritesMoviesInteractor.isFavorite(id)
 }

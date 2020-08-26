@@ -8,10 +8,6 @@ class MainViewModel(
     private val favoritesInteractor: FavoritesInteractor
 ) {
 
-    fun toggleFavorite(id: Int) {
-        favoritesInteractor.toggleFavorite(id)
-    }
-
     fun listFavorites() = favoritesInteractor.listFavorites()
 
 }

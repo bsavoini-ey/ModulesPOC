@@ -1,11 +1,16 @@
 package com.bsavoini.repository
 
+import com.bsavoini.repository.models.FavoriteEntity
+import com.bsavoini.repository.models.MediaTypeEntity
+
 interface FavoritesRepository {
 
-    fun addFavorite(id: Int): Boolean
+    fun addFavorite(favoriteEntity: FavoriteEntity): Boolean
 
-    fun removeFavorite(id: Int): Boolean
+    fun removeFavorite(favoriteEntity: FavoriteEntity): Boolean
 
-    fun getFavorite(id: Int): Boolean
+    fun isFavorite(id: Int, mediaType: MediaTypeEntity): Boolean
+
+    fun listFavorites(): List<FavoriteEntity>
 
 }

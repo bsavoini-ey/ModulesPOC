@@ -1,7 +1,7 @@
 package com.bsavoini.interactor
 
+import com.bsavoini.interactor.converters.toMovieModel
 import com.bsavoini.interactor.model.MovieModel
-import com.bsavoini.usecases.MovieDO
 import com.bsavoini.usecases.media.GetMoviesUseCase
 
 class MoviesInteractor(private val moviesUseCase: GetMoviesUseCase) {
@@ -10,8 +10,4 @@ class MoviesInteractor(private val moviesUseCase: GetMoviesUseCase) {
         moviesUseCase.execute(Unit).map {
             it.toMovieModel()
         }
-
-    private fun MovieDO.toMovieModel() =
-        MovieModel(id, name)
-
 }

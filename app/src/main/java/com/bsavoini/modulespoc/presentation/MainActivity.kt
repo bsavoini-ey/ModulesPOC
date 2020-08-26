@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.listFavorites()
-        viewModel.toggleFavorite(0)
 
         btn_tv_shows.setOnClickListener {
             openTvShows()

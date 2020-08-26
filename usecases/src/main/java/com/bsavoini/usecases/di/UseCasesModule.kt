@@ -1,7 +1,8 @@
 package com.bsavoini.usecases.di
 
 import com.bsavoini.usecases.favorite.AddFavoriteUseCase
-import com.bsavoini.usecases.favorite.GetFavoriteUseCase
+import com.bsavoini.usecases.favorite.IsFavoriteUseCase
+import com.bsavoini.usecases.favorite.ListFavoritesUseCase
 import com.bsavoini.usecases.favorite.RemoveFavoriteUseCase
 import com.bsavoini.usecases.media.GetMoviesUseCase
 import com.bsavoini.usecases.media.GetTvShowsUseCase
@@ -11,6 +12,7 @@ val useCasesModule = module {
     factory { GetMoviesUseCase(get()) }
     factory { GetTvShowsUseCase(get()) }
     factory { AddFavoriteUseCase(get()) }
-    factory { GetFavoriteUseCase(get()) }
+    factory { IsFavoriteUseCase(get()) }
     factory { RemoveFavoriteUseCase(get()) }
+    factory { ListFavoritesUseCase(get()) }
 }

@@ -1,9 +1,9 @@
 package com.bsavoini.usecases.media
 
 import com.bsavoini.repository.MediaRepository
-import com.bsavoini.repository.TvShowEntity
+import com.bsavoini.repository.models.TvShowEntity
 import com.bsavoini.usecases.BaseUseCase
-import com.bsavoini.usecases.TvShowDO
+import com.bsavoini.usecases.domainobjects.TvShowDO
 
 class GetTvShowsUseCase(private val repository: MediaRepository) :
     BaseUseCase<List<TvShowDO>, Unit>() {

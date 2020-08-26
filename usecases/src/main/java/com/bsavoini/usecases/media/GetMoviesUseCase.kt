@@ -1,9 +1,9 @@
 package com.bsavoini.usecases.media
 
 import com.bsavoini.repository.MediaRepository
-import com.bsavoini.repository.MovieEntity
+import com.bsavoini.repository.models.MovieEntity
 import com.bsavoini.usecases.BaseUseCase
-import com.bsavoini.usecases.MovieDO
+import com.bsavoini.usecases.domainobjects.MovieDO
 
 class GetMoviesUseCase(private val repository: MediaRepository) :
     BaseUseCase<List<MovieDO>, Unit>() {

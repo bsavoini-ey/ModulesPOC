@@ -1,6 +1,8 @@
 package com.bsavoini.repository
 
 import android.util.Log
+import com.bsavoini.repository.models.MovieEntity
+import com.bsavoini.repository.models.TvShowEntity
 
 class MediaRepositoryImpl : MediaRepository {
     override fun getMovies(): List<MovieEntity> {

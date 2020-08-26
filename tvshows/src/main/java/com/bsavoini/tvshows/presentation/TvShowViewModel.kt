@@ -1,12 +1,13 @@
 package com.bsavoini.tvshows.presentation
 
+import com.bsavoini.interactor.FavoriteTvShowsInteractor
 import com.bsavoini.interactor.FavoritesInteractor
 import com.bsavoini.interactor.TvShowsInteractor
 import com.bsavoini.interactor.model.TvShowModel
 
 class TvShowViewModel(
     private val tvShowsInteractor: TvShowsInteractor,
-    private val favoritesInteractor: FavoritesInteractor
+    private val favoriteTvShowsInteractor: FavoriteTvShowsInteractor
 ) {
 
     fun listTvShows() {
@@ -14,8 +15,8 @@ class TvShowViewModel(
     }
 
     fun toggleFavorite(id: Int) {
-        favoritesInteractor.toggleFavorite(id)
+        favoriteTvShowsInteractor.toggleFavorite(id)
     }
 
-    fun isFavorite(id: Int) = favoritesInteractor.isFavorite(id)
+    fun isFavorite(id: Int) = favoriteTvShowsInteractor.isFavorite(id)
 }

@@ -22,6 +22,6 @@ class FavoriteTvShowsInteractor(
         }
     }
 
-    fun isFavorite(id: Int): Boolean =
+    private fun isFavorite(id: Int): Boolean =
         isFavoriteUseCase.execute(IsFavoriteUseCase.Params(id, MediaTypeDO.TV_SHOW))
 }

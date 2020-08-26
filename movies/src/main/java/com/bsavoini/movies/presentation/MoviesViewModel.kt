@@ -15,6 +15,4 @@ class MoviesViewModel(
     fun toggleFavorite(id: Int) {
         favoritesMoviesInteractor.toggleFavorite(id)
     }
-
-    fun isFavorite(id: Int) = favoritesMoviesInteractor.isFavorite(id)
 }

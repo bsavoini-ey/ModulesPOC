@@ -18,5 +18,4 @@ class TvShowViewModel(
         favoriteTvShowsInteractor.toggleFavorite(id)
     }
 
-    fun isFavorite(id: Int) = favoriteTvShowsInteractor.isFavorite(id)
 }

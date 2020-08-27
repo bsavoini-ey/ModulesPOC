@@ -3,10 +3,10 @@ package com.bsavoini.repository
 import android.util.Log
 import com.bsavoini.repository.models.FavoriteEntity
 import com.bsavoini.repository.models.MediaTypeEntity
+import com.bsavoini.storage.daos.FavoritesDao
 
-class FavoritesRepositoryImpl : FavoritesRepository {
+class FavoritesRepositoryImpl(val favoritesDao: FavoritesDao) : FavoritesRepository {
     override fun addFavorite(favoriteEntity: FavoriteEntity): Boolean {
-        Log.d("svn", "adding favorite")
         return false
     }
 

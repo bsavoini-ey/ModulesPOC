@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     single { MediaRepositoryImpl(get()) as MediaRepository}
-    single { FavoritesRepositoryImpl() as FavoritesRepository}
+    single { FavoritesRepositoryImpl(get()) as FavoritesRepository}
 }

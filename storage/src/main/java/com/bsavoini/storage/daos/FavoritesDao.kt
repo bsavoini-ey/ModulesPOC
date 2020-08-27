@@ -13,7 +13,7 @@ interface FavoritesDao {
     fun selectAllFavorites(): List<FavoriteEntity>
 
     @Query("SELECT * FROM Favorite where id = :id AND mediaType = :mediaType")
-    fun selectFavorite(id: Int, mediaType: String): List<FavoriteEntity>
+    fun getFavorite(id: Int, mediaType: String): List<FavoriteEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertFavorite(favoriteEntity: FavoriteEntity)

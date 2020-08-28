@@ -14,7 +14,7 @@ class MainAdapter(private val list: List<FavoriteModel>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         return FavoriteViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_favorite, parent, false
+                R.layout.item_movies, parent, false
             )
         )
     }

@@ -1,6 +1,7 @@
 package com.bsavoini.movies.presentation
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.bsavoini.base_features.BaseViewModel
 import com.bsavoini.interactor.FavoriteMoviesInteractor
 import com.bsavoini.interactor.MoviesInteractor
@@ -10,17 +11,20 @@ class MoviesViewModel(
     private val moviesInteractor: MoviesInteractor,
     private val favoritesMoviesInteractor: FavoriteMoviesInteractor
 ) : BaseViewModel() {
+    private val _movies = MutableLiveData<List<MovieModel>>()
+    val movies: LiveData<List<MovieModel>>
+        get() = _movies
 
     fun listMovies() {
-        launchBackgroundJob({
-            val list: List<MovieModel> = moviesInteractor.listMovies()
-            Log.d("svn", "list: $list")
-        })
+        launchBackgroundJob(
+            { moviesInteractor.listMovies() },
+            { _movies.value = it })
     }
 
     fun toggleFavorite(id: Int) {
-        launchBackgroundJob({
-            favoritesMoviesInteractor.toggleFavorite(id)
-        })
+        launchBackgroundJob(
+            { favoritesMoviesInteractor.toggleFavorite(id) },
+            {}
+        )
     }
 }

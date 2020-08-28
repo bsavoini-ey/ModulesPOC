@@ -12,10 +12,10 @@ class FavoriteMoviesInteractor(
     private val isFavoriteUseCase: IsFavoriteUseCase
 ) {
 
-    suspend fun toggleFavorite(id: Int): Boolean {
+    suspend fun toggleFavorite(id: Int) {
         val favoriteDO = FavoriteDO(id, MediaTypeDO.MOVIE)
 
-        return if (isFavorite(id)) {
+        if (isFavorite(id)) {
             removeFavoriteUseCase.execute(favoriteDO)
         } else {
             addFavoriteUseCase.execute(favoriteDO)

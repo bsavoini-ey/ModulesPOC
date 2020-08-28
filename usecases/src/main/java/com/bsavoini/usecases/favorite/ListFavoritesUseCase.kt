@@ -12,5 +12,4 @@ class ListFavoritesUseCase(private val repository: FavoritesRepository) :
         repository.listFavorites().map {
             it.toFavoriteDO()
         }
-
 }

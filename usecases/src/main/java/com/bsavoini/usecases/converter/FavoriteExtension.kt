@@ -1,13 +1,13 @@
 package com.bsavoini.usecases.converter
 
 import com.bsavoini.repository.models.FavoriteEntity
-import com.bsavoini.repository.models.MediaTypeEntity
+import com.bsavoini.repository.models.MediaType
 import com.bsavoini.usecases.domainobjects.FavoriteDO
 import com.bsavoini.usecases.domainobjects.MediaTypeDO
 
 fun FavoriteDO.toFavoriteEntity() = FavoriteEntity(
     id = this.id,
-    mediaType = MediaTypeEntity.valueOf(this.mediaType.name)
+    mediaType = MediaType.valueOf(this.mediaType.name)
 )
 
 fun FavoriteEntity.toFavoriteDO() = FavoriteDO(

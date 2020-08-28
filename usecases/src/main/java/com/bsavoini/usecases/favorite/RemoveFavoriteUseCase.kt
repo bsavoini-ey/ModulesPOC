@@ -6,9 +6,9 @@ import com.bsavoini.usecases.converter.toFavoriteEntity
 import com.bsavoini.usecases.domainobjects.FavoriteDO
 
 class RemoveFavoriteUseCase(private val repository: FavoritesRepository) :
-    BaseUseCase<Boolean, FavoriteDO>() {
+    BaseUseCase<Unit, FavoriteDO>() {
 
-    override suspend fun getResult(favorite: FavoriteDO): Boolean =
+    override suspend fun getResult(favorite: FavoriteDO)=
         repository.removeFavorite(favorite.toFavoriteEntity())
 
 }

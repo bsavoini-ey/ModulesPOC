@@ -4,10 +4,10 @@ import android.os.Bundle
 import com.bsavoini.base_features.BaseViewModelActivity
 import com.bsavoini.tvshows.R
 import kotlinx.android.synthetic.main.activity_tv_show.*
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TvShowActivity : BaseViewModelActivity() {
-     private val viewModel: TvShowViewModel by inject<TvShowViewModel>()
+     private val viewModel: TvShowViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -13,7 +13,7 @@ class FavoritesInteractor(
     private val getTvShowUseCase: GetTvShowUseCase
 ) {
 
-    suspend fun listFavorites(): List<FavoriteModel> =
+    suspend fun getFavorites(): List<FavoriteModel> =
         listFavoritesUseCase.execute(Unit).map { favorite ->
             val name: String
             val posterUrl: String

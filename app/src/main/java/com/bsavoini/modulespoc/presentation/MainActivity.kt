@@ -4,19 +4,30 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bsavoini.base_features.BaseViewModelActivity
 import com.bsavoini.modulespoc.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseViewModelActivity() {
     private val viewModel: MainViewModel by inject<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        initViewModelObservers()
+        addClickListeners()
         viewModel.listFavorites()
+    }
 
+    private fun initViewModelObservers() {
+        viewModel.favorites.invokeOnChanged {
+            list_favorites.adapter = MainAdapter(it)
+        }
+    }
+
+    private fun addClickListeners() {
         btn_tv_shows.setOnClickListener {
             openTvShows()
         }

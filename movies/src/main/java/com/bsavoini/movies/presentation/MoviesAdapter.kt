@@ -9,9 +9,7 @@ import com.bsavoini.interactor.model.MovieModel
 import com.bsavoini.movies.R
 import kotlinx.android.synthetic.main.item_movies.view.*
 
-
-class MoviesAdapter(private val list: List<MovieModel>) :
-    RecyclerView.Adapter<MoviesViewHolder>() {
+class MoviesAdapter(private val list: List<MovieModel>) : RecyclerView.Adapter<MoviesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(

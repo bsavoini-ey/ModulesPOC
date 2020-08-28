@@ -4,9 +4,8 @@ import com.bsavoini.interactor.*
 import org.koin.dsl.module
 
 val interactorModule = module {
-    factory { FavoritesInteractor(get(), get(), get()) }
-    factory { FavoriteMoviesInteractor(get(), get(), get()) }
-    factory { FavoriteTvShowsInteractor(get(), get(), get()) }
-    factory { MoviesInteractor(get(), get()) }
-    factory { TvShowsInteractor(get(), get()) }
+    val baseImgUrl = BuildConfig.BASE_IMAGE_URL
+    factory { FavoritesInteractor(get(), get(), get(), baseImgUrl) }
+    factory { MoviesInteractor(get(), get(), get(), get(), baseImgUrl) }
+    factory { TvShowsInteractor(get(), get(), get(), get(), baseImgUrl) }
 }

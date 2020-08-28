@@ -6,5 +6,5 @@ import com.bsavoini.repository.models.MovieEntity
 fun MovieResult.toMovieEntity() = MovieEntity(
     id = this.id,
     name = this.title,
-    posterUrl = this.posterUrl
+    posterPath = this.posterPath
 )

@@ -6,5 +6,5 @@ import com.bsavoini.repository.models.TvShowEntity
 fun TvShowResult.toTvShowEntity() = TvShowEntity(
     id = this.id,
     name = this.name,
-    posterUrl = this.posterUrl
+    posterPath = this.posterPath
 )

@@ -1,13 +1,11 @@
 package com.bsavoini.tvshows.presentation
 
 import com.bsavoini.base_features.BaseViewModel
-import com.bsavoini.interactor.FavoriteTvShowsInteractor
 import com.bsavoini.interactor.TvShowsInteractor
 import com.bsavoini.interactor.model.TvShowModel
 
 class TvShowViewModel(
-    private val tvShowsInteractor: TvShowsInteractor,
-    private val favoriteTvShowsInteractor: FavoriteTvShowsInteractor
+    private val tvShowsInteractor: TvShowsInteractor
 ) : BaseViewModel() {
 
     fun listTvShows() {
@@ -18,7 +16,7 @@ class TvShowViewModel(
 
     fun toggleFavorite(id: Int) {
         launchBackgroundJob({
-            favoriteTvShowsInteractor.toggleFavorite(id)
+            tvShowsInteractor.toggleFavorite(id)
         })
     }
 }

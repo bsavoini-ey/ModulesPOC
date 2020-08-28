@@ -10,9 +10,9 @@ import com.bsavoini.usecases.media.GetTvShowUseCase
 class FavoritesInteractor(
     private val listFavoritesUseCase: ListFavoritesUseCase,
     private val getMovieUseCase: GetMovieUseCase,
-    private val getTvShowUseCase: GetTvShowUseCase
+    private val getTvShowUseCase: GetTvShowUseCase,
+    private val baseImgUrl: String
 ) {
-
     suspend fun getFavorites(): List<FavoriteModel> =
         listFavoritesUseCase.execute(Unit).map { favorite ->
             val name: String
@@ -21,14 +21,14 @@ class FavoritesInteractor(
             when (favorite.mediaType) {
                 MediaTypeDO.MOVIE -> getMovieUseCase.execute(favorite.id).let { movie ->
                     name = movie.name
-                    posterUrl = movie.posterUrl
+                    posterUrl = movie.posterPath
                 }
                 MediaTypeDO.TV_SHOW -> getTvShowUseCase.execute(favorite.id).let { tvShow ->
                     name = tvShow.name
-                    posterUrl = tvShow.posterUrl
+                    posterUrl = tvShow.posterPath
                 }
             }
 
-            favorite.toFavoriteModel(name, posterUrl)
+            favorite.toFavoriteModel(name, posterUrl, baseImgUrl)
         }
 }

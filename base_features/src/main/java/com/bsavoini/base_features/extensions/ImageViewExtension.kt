@@ -6,10 +6,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory
 
-private const val baseUrl = "https://image.tmdb.org/t/p/"
 
-fun ImageView.loadImage(path: String) {
-    val url = baseUrl + "w185" + path
+fun ImageView.loadImage(url: String) {
 
     val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
 

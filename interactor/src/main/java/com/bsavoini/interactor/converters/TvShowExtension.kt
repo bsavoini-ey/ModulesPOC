@@ -7,5 +7,6 @@ fun TvShowDO.toTvShowModel(isFavorite: Boolean) =
     TvShowModel(
         id = id,
         name = name,
+        posterUrl = this.posterUrl,
         isFavorite = isFavorite
     )

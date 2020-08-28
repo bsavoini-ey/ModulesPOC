@@ -5,5 +5,6 @@ import com.bsavoini.usecases.domainobjects.MovieDO
 
 fun MovieEntity.toMovieDO() = MovieDO(
     id = this.id,
-    name = this.name
+    name = this.name,
+    posterUrl = this.posterUrl
 )

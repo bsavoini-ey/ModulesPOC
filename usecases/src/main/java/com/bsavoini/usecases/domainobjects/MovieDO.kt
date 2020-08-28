@@ -1,3 +1,7 @@
 package com.bsavoini.usecases.domainobjects
 
-data class MovieDO(val id: Int, val name: String)
+data class MovieDO(
+    val id: Int,
+    val name: String,
+    val posterUrl: String
+)

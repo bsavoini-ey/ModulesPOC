@@ -7,5 +7,6 @@ fun MovieDO.toMovieModel(isFavorite: Boolean) =
     MovieModel(
         id = id,
         name = name,
+        posterUrl = this.posterUrl,
         isFavorite = isFavorite
     )

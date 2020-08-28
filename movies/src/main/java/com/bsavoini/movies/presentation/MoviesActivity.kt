@@ -1,10 +1,9 @@
 package com.bsavoini.movies.presentation
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.bsavoini.base_features.BaseViewModelActivity
 import com.bsavoini.movies.R
-import kotlinx.android.synthetic.main.activity_movies_activity.*
+import kotlinx.android.synthetic.main.activity_movies.*
 import org.koin.android.ext.android.inject
 
 class MoviesActivity : BaseViewModelActivity() {
@@ -12,7 +11,7 @@ class MoviesActivity : BaseViewModelActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movies_activity)
+        setContentView(R.layout.activity_movies)
         initViewModelObservers()
         viewModel.listMovies()
     }

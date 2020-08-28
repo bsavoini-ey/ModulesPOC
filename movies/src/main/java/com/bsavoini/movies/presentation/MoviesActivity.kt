@@ -1,7 +1,7 @@
 package com.bsavoini.movies.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bsavoini.movies.R
 import org.koin.android.ext.android.inject
 

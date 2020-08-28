@@ -1,7 +1,6 @@
 package com.bsavoini.movies.presentation
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.bsavoini.base_features.BaseViewModel
 import com.bsavoini.interactor.FavoriteMoviesInteractor
 import com.bsavoini.interactor.MoviesInteractor

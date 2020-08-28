@@ -1,7 +1,6 @@
 package com.bsavoini.usecases.media
 
 import com.bsavoini.repository.MediaRepository
-import com.bsavoini.repository.models.TvShowEntity
 import com.bsavoini.usecases.BaseUseCase
 import com.bsavoini.usecases.converter.toTvShowDO
 import com.bsavoini.usecases.domainobjects.TvShowDO

@@ -2,7 +2,6 @@ package com.bsavoini.tvshows.presentation
 
 import com.bsavoini.base_features.BaseViewModel
 import com.bsavoini.interactor.FavoriteTvShowsInteractor
-import com.bsavoini.interactor.FavoritesInteractor
 import com.bsavoini.interactor.TvShowsInteractor
 import com.bsavoini.interactor.model.TvShowModel
 

@@ -2,7 +2,6 @@ package com.bsavoini.interactor
 
 import com.bsavoini.interactor.converters.toMovieModel
 import com.bsavoini.interactor.model.MovieModel
-import com.bsavoini.interactor.model.TvShowModel
 import com.bsavoini.usecases.domainobjects.MediaTypeDO
 import com.bsavoini.usecases.domainobjects.MovieDO
 import com.bsavoini.usecases.favorite.IsFavoriteUseCase

@@ -3,11 +3,12 @@ package com.bsavoini.movies.presentation
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bsavoini.base_features.extensions.loadImage
 import com.bsavoini.interactor.model.MovieModel
 import com.bsavoini.movies.R
-import kotlinx.android.synthetic.main.item_movies.view.*
 
 class MoviesAdapter(
     private val list: List<MovieModel>,
@@ -18,7 +19,7 @@ class MoviesAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_movies, parent, false
+                R.layout.item_favorite, parent, false
             )
         )
     }
@@ -35,9 +36,9 @@ class MoviesAdapter(
 
 class MoviesViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(movie: MovieModel, onClickFavorite: (Int) -> Unit): Unit = with(view) {
-        txt_name.text = movie.name
-        img_poster.loadImage(movie.posterUrl)
-        img_fav.isSelected = movie.isFavorite
+        findViewById<TextView>(R.id.txt_name).text = movie.name
+        findViewById<ImageView>(R.id.img_poster).loadImage(movie.posterUrl)
+        findViewById<ImageView>(R.id.img_fav).isSelected = movie.isFavorite
 
         this.setOnClickListener {
             movie.isFavorite = movie.isFavorite.not()

@@ -11,4 +11,16 @@ abstract class BaseViewModelActivity : AppCompatActivity() {
             this@BaseViewModelActivity,
             Observer { v -> block.invoke(v) }
         )
+
+    protected fun showBackButton() {
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

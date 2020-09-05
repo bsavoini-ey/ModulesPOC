@@ -3,13 +3,18 @@ package com.bsavoini.modulespoc.presentation
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bsavoini.base_features.extensions.loadImage
 import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.modulespoc.R
-import kotlinx.android.synthetic.main.item_favorite.view.*
+import com.bsavoini.movies.presentation.MoviesViewHolder
 
-class MainAdapter(private val list: List<FavoriteModel>) :
+class MainAdapter(
+    private val list: MutableList<FavoriteModel>,
+    private val onClickFavorite: (FavoriteModel) -> Unit
+) :
     RecyclerView.Adapter<FavoriteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
@@ -21,16 +26,26 @@ class MainAdapter(private val list: List<FavoriteModel>) :
     }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position]) { favorite ->
+            onClickFavorite(favorite)
+            list.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, list.size)
+        }
     }
 
     override fun getItemCount(): Int = list.size
 }
 
 class FavoriteViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(favorite: FavoriteModel): Unit = with(view) {
-        txt_name.text = favorite.name
-        img_poster.loadImage(favorite.posterUrl)
+    fun bind(favorite: FavoriteModel, onClickFavorite: (FavoriteModel) -> Unit): Unit = with(view) {
+        findViewById<TextView>(com.bsavoini.movies.R.id.txt_name).text = favorite.name
+        findViewById<ImageView>(com.bsavoini.movies.R.id.img_poster).loadImage(favorite.posterUrl)
+        findViewById<ImageView>(com.bsavoini.movies.R.id.img_fav).isSelected = true
+
+        this.setOnClickListener {
+            onClickFavorite(favorite)
+        }
     }
 }
 

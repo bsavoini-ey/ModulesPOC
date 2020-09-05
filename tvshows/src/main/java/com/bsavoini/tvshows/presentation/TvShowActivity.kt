@@ -8,11 +8,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TvShowActivity : BaseViewModelActivity() {
     private val viewModel: TvShowViewModel by viewModel()
-    lateinit var adapter: TvShowsAdapter
+    private lateinit var adapter: TvShowsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tv_show)
+        title = getString(R.string.tv_shows_title)
+        showBackButton()
         initViewModelObservers()
         viewModel.listTvShows()
     }

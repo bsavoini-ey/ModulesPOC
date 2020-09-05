@@ -8,11 +8,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesActivity : BaseViewModelActivity() {
     private val viewModel: MoviesViewModel by viewModel()
-    lateinit var adapter: MoviesAdapter
+    private lateinit var adapter: MoviesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies)
+        title = getString(R.string.movies_title)
+        showBackButton()
         initViewModelObservers()
         viewModel.listMovies()
     }

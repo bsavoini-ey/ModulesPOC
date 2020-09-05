@@ -1,9 +1,11 @@
 package com.bsavoini.interactor
 
+import com.bsavoini.interactor.converters.toFavoriteDO
 import com.bsavoini.interactor.converters.toFavoriteModel
 import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.usecases.domainobjects.MediaTypeDO
 import com.bsavoini.usecases.favorite.ListFavoritesUseCase
+import com.bsavoini.usecases.favorite.RemoveFavoriteUseCase
 import com.bsavoini.usecases.media.GetMovieUseCase
 import com.bsavoini.usecases.media.GetTvShowUseCase
 
@@ -11,6 +13,7 @@ class FavoritesInteractor(
     private val listFavoritesUseCase: ListFavoritesUseCase,
     private val getMovieUseCase: GetMovieUseCase,
     private val getTvShowUseCase: GetTvShowUseCase,
+    private val removeFavoriteUseCase: RemoveFavoriteUseCase,
     private val baseImgUrl: String
 ) {
     suspend fun getFavorites(): List<FavoriteModel> =
@@ -31,4 +34,8 @@ class FavoritesInteractor(
 
             favorite.toFavoriteModel(name, posterUrl, baseImgUrl)
         }
+
+    suspend fun unfavorite(favorite: FavoriteModel) {
+        removeFavoriteUseCase.execute(favorite.toFavoriteDO())
+    }
 }

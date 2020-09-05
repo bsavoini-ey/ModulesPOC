@@ -17,4 +17,10 @@ class MainViewModel(private val favoritesInteractor: FavoritesInteractor) : Base
             onSuccess = { _favorites.value = it }
         )
     }
+
+    fun unfavorite(favorite: FavoriteModel) {
+        launchBackgroundJob(
+            backgroundJob = { favoritesInteractor.unfavorite(favorite) }
+        )
+    }
 }

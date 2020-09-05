@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import com.bsavoini.base_features.BaseViewModelActivity
+import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.modulespoc.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -14,6 +15,7 @@ class MainActivity : BaseViewModelActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        title = getString(R.string.main_title)
         initViewModelObservers()
         addClickListeners()
     }
@@ -25,7 +27,7 @@ class MainActivity : BaseViewModelActivity() {
 
     private fun initViewModelObservers() {
         viewModel.favorites.invokeOnChanged {
-            list_favorites.adapter = MainAdapter(it)
+            list_favorites.adapter = MainAdapter(it.toMutableList(), ::onClickFavorite)
         }
     }
 
@@ -51,5 +53,9 @@ class MainActivity : BaseViewModelActivity() {
             data = Uri.parse("app://movies")
         }
         startActivity(intent)
+    }
+
+    private fun onClickFavorite(favorite: FavoriteModel) {
+        viewModel.unfavorite(favorite)
     }
 }

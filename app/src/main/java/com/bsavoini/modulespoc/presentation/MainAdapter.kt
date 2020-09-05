@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bsavoini.base_features.extensions.loadImage
 import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.modulespoc.R
 import kotlinx.android.synthetic.main.item_favorite.view.*
@@ -14,7 +15,7 @@ class MainAdapter(private val list: List<FavoriteModel>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         return FavoriteViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_movies, parent, false
+                R.layout.item_favorite, parent, false
             )
         )
     }
@@ -29,6 +30,7 @@ class MainAdapter(private val list: List<FavoriteModel>) :
 class FavoriteViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(favorite: FavoriteModel): Unit = with(view) {
         txt_name.text = favorite.name
+        img_poster.loadImage(favorite.posterUrl)
     }
 }
 

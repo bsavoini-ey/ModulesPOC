@@ -16,6 +16,10 @@ class MainActivity : BaseViewModelActivity() {
         setContentView(R.layout.activity_main)
         initViewModelObservers()
         addClickListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
         viewModel.listFavorites()
     }
 

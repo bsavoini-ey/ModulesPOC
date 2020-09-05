@@ -9,7 +9,11 @@ import com.bsavoini.interactor.model.MovieModel
 import com.bsavoini.movies.R
 import kotlinx.android.synthetic.main.item_movies.view.*
 
-class MoviesAdapter(private val list: List<MovieModel>) : RecyclerView.Adapter<MoviesViewHolder>() {
+class MoviesAdapter(
+    private val list: List<MovieModel>,
+    private val onClickFavorite: (Int) -> Unit
+) :
+    RecyclerView.Adapter<MoviesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(
@@ -20,16 +24,24 @@ class MoviesAdapter(private val list: List<MovieModel>) : RecyclerView.Adapter<M
     }
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position]) { id ->
+            onClickFavorite(id)
+            notifyItemChanged(position)
+        }
     }
 
     override fun getItemCount(): Int = list.size
 }
 
 class MoviesViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(movie: MovieModel): Unit = with(view) {
+    fun bind(movie: MovieModel, onClickFavorite: (Int) -> Unit): Unit = with(view) {
         txt_name.text = movie.name
         img_poster.loadImage(movie.posterUrl)
+        img_fav.isSelected = movie.isFavorite
+
+        this.setOnClickListener {
+            movie.isFavorite = movie.isFavorite.not()
+            onClickFavorite(movie.id)
+        }
     }
 }
-

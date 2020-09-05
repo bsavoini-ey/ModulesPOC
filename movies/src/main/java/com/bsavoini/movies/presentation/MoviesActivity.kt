@@ -8,6 +8,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesActivity : BaseViewModelActivity() {
     private val viewModel: MoviesViewModel by viewModel()
+    lateinit var adapter: MoviesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +19,12 @@ class MoviesActivity : BaseViewModelActivity() {
 
     private fun initViewModelObservers() {
         viewModel.movies.invokeOnChanged {
-            list_movies.adapter = MoviesAdapter(it)
+            adapter = MoviesAdapter(it, ::onClickFavorite)
+            list_movies.adapter = adapter
         }
     }
 
+    private fun onClickFavorite(id: Int) {
+        viewModel.toggleFavorite(id)
+    }
 }

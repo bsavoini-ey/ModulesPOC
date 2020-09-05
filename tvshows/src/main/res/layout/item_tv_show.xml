@@ -21,9 +21,19 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/img_poster"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_fav"
         app:layout_constraintStart_toEndOf="@+id/img_poster"
         app:layout_constraintTop_toTopOf="@+id/img_poster"
         tools:text="Breaking Bad" />
+
+    <ImageView
+        android:id="@+id/img_fav"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/selector_favorite"
+        app:layout_constraintBottom_toBottomOf="@+id/img_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_poster" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

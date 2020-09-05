@@ -7,7 +7,8 @@ import kotlinx.android.synthetic.main.activity_tv_show.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TvShowActivity : BaseViewModelActivity() {
-     private val viewModel: TvShowViewModel by viewModel()
+    private val viewModel: TvShowViewModel by viewModel()
+    lateinit var adapter: TvShowsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,13 @@ class TvShowActivity : BaseViewModelActivity() {
 
     private fun initViewModelObservers() {
         viewModel.tvShows.invokeOnChanged {
-            list_tv_shows.adapter = TvShowsAdapter(it)
+            adapter = TvShowsAdapter(it, ::onClickFavorite)
+
+            list_tv_shows.adapter = adapter
         }
+    }
+
+    private fun onClickFavorite(id: Int) {
+        viewModel.toggleFavorite(id)
     }
 }

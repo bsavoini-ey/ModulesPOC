@@ -4,5 +4,5 @@ data class TvShowModel(
     val id: Int,
     val name: String,
     val posterUrl: String,
-    val isFavorite: Boolean
+    var isFavorite: Boolean
 )

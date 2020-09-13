@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import com.bsavoini.base_features.BaseViewModelActivity
+import com.bsavoini.base_features.getTvShowsActivityName
 import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.modulespoc.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -42,10 +43,7 @@ class MainActivity : BaseViewModelActivity() {
     }
 
     private fun openTvShows() {
-        val intent = Intent().apply {
-            data = Uri.parse("app://tv-shows")
-        }
-        startActivity(intent)
+        startActivity(Intent().setClassName(this, getTvShowsActivityName()))
     }
 
     private fun openMovies() {

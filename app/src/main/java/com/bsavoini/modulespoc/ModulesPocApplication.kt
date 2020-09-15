@@ -1,12 +1,12 @@
 package com.bsavoini.modulespoc
 
-import android.app.Application
 import com.bsavoini.dependencyinjection.projectModules
 import com.bsavoini.modulespoc.di.applicationModule
+import com.google.android.play.core.splitcompat.SplitCompatApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class ModulesPocApplication : Application() {
+class ModulesPocApplication : SplitCompatApplication() {
     override fun onCreate() {
         super.onCreate()
         startKoin {

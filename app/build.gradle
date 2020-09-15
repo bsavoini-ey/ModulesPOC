@@ -27,12 +27,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    dynamicFeatures = [':movies']
 }
 
 dependencies {
     implementation project(":base_features")
     implementation project(":interactor")
     implementation project(":dependencyinjection")
+
 //    implementation project(":tvshows")
 //    implementation project(":movies")
+
+    implementation project(":tvshows")
+
+    implementation "com.google.android.play:core:1.8.0"
+
 }

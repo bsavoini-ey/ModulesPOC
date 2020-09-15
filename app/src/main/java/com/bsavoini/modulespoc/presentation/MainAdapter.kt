@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bsavoini.base_features.extensions.loadImage
 import com.bsavoini.interactor.model.FavoriteModel
 import com.bsavoini.modulespoc.R
-import com.bsavoini.movies.presentation.MoviesViewHolder
 
 class MainAdapter(
     private val list: MutableList<FavoriteModel>,
@@ -39,9 +38,9 @@ class MainAdapter(
 
 class FavoriteViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(favorite: FavoriteModel, onClickFavorite: (FavoriteModel) -> Unit): Unit = with(view) {
-        findViewById<TextView>(com.bsavoini.movies.R.id.txt_name).text = favorite.name
-        findViewById<ImageView>(com.bsavoini.movies.R.id.img_poster).loadImage(favorite.posterUrl)
-        findViewById<ImageView>(com.bsavoini.movies.R.id.img_fav).isSelected = true
+        findViewById<TextView>(R.id.txt_name).text = favorite.name
+        findViewById<ImageView>(R.id.img_poster).loadImage(favorite.posterUrl)
+        findViewById<ImageView>(R.id.img_fav).isSelected = true
 
         this.setOnClickListener {
             onClickFavorite(favorite)

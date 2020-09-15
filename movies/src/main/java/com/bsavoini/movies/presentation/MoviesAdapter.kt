@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bsavoini.base_features.extensions.loadImage
 import com.bsavoini.interactor.model.MovieModel
-import com.bsavoini.movies.R
+import com.bsavoini.base_features.R
 
 class MoviesAdapter(
     private val list: List<MovieModel>,

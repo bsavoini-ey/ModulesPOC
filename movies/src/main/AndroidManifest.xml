@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bsavoini.movies">
 
-    <application>
+    <application android:theme="@style/AppTheme">
         <activity android:name=".presentation.MoviesActivity">
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "scheme://host” -->
-                <data android:scheme="app" android:host="movies" />
+                <data
+                    android:host="movies"
+                    android:scheme="app" />
             </intent-filter>
         </activity>
     </application>

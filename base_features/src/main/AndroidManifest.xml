@@ -1,4 +1,6 @@
-<manifest package="com.bsavoini.base_features">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bsavoini.base_features">
 
-    /
+    <application android:theme="@style/AppTheme" />
+
 </manifest>

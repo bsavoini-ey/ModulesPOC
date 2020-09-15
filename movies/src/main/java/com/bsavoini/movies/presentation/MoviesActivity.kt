@@ -2,13 +2,14 @@ package com.bsavoini.movies.presentation
 
 import android.content.Context
 import android.os.Bundle
+import com.angelicao.favorite.di.MoviesKoinComponent
 import com.bsavoini.base_features.BaseViewModelActivity
 import com.bsavoini.movies.R
 import com.google.android.play.core.splitcompat.SplitCompat
 import kotlinx.android.synthetic.main.activity_movies.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MoviesActivity : BaseViewModelActivity() {
+class MoviesActivity : BaseViewModelActivity(), MoviesKoinComponent {
     private val viewModel: MoviesViewModel by viewModel()
     private lateinit var adapter: MoviesAdapter
 

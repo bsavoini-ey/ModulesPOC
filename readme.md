@@ -13,7 +13,7 @@ https://medium.com/@AnilSisodiya/android-dynamic-delivery-feature-app-bundle-tes
 java -jar bundletool-all-1.2.0.jar build-apks --overwrite --local-testing --bundle C://Users//FreshWorks//Documents//study//BundleTest//app-debug.aab --output C://Users//FreshWorks//Documents//study//BundleTest//app-debug.apks
 =======
 https://medium.com/androiddevelopers/local-development-and-testing-with-fakesplitinstallmanager-57083e1840a4
-
+https://medium.com/@AnilSisodiya/android-dynamic-delivery-feature-app-bundle-testing-d3e8a44fa84f
 
 java -jar bundletool-all-1.2.0.jar build-apks --overwrite --local-testing --bundle C://Users//FreshWorks//Documents//study//BundleTest//app-debug.aab --output C://Users//FreshWorks//Documents//study//BundleTest//app-debug.apks
 

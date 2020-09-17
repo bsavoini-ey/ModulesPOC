@@ -33,6 +33,6 @@ dependencies {
     implementation project(":base_features")
     implementation project(":interactor")
     implementation project(":dependencyinjection")
-    implementation project(":tvshows")
-    implementation project(":movies")
+//    implementation project(":tvshows")
+//    implementation project(":movies")
 }
